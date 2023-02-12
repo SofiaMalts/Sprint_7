@@ -1,4 +1,4 @@
-package steps;
+package steps.order;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.hamcrest.MatcherAssert;

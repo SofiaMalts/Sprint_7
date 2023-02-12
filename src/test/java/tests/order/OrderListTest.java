@@ -1,8 +1,8 @@
-package tests;
+package tests.order;
 
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
-import steps.OrderListTestSteps;
+import steps.order.OrderListTestSteps;
 import org.junit.Before;
 import org.junit.Test;
 import ru.practicum_services.qa_scooter.responses.order.Orders;

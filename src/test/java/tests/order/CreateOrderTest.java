@@ -1,10 +1,10 @@
-package tests;
+package tests.order;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import steps.CreateOrderTestSteps;
+import steps.order.CreateOrderTestSteps;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

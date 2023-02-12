@@ -1,4 +1,4 @@
-package tests;
+package tests.courier;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
@@ -7,7 +7,7 @@ import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.Before;
-import steps.CourierSteps;
+import steps.courier.CourierSteps;
 
 import ru.practicum_services.qa_scooter.model.Courier;
 import ru.practicum_services.qa_scooter.responses.courier.CourierResponse;

@@ -1,4 +1,4 @@
-package steps;
+package steps.order;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
@@ -31,11 +31,7 @@ public static Response createOrder(String uri, Object body){
     public static void checkResponseStatus(Response response, String expectedStatus){
         response.then().assertThat().statusLine(expectedStatus);
     }
-    @Step("Проверить тело ответа")
-    public static void checkResponseBody(Response response, OrderResponse expectedObject){
-        OrderResponse responseAsObject = responseToObject(response);
-        assertThat(responseAsObject).usingRecursiveComparison().isEqualTo(expectedObject);
-    }
+
     @Step("Проверить код состояния")
     public static void checkResponseCode(Response response, int expectedCode){
         response.then().assertThat().statusCode(expectedCode);
@@ -47,11 +43,5 @@ public static Response createOrder(String uri, Object body){
         checkResponseStatus(response, expectedStatus);
     }
 
-    public static void printResponseData(Response response) {
-        System.out.println(response.statusCode());
-        System.out.println(response.statusLine());
-        OrderResponse responseAsObject = responseToObject(response);
-        System.out.println(responseAsObject.getTrack());
 
-    }
 }

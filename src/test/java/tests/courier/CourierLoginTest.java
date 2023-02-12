@@ -1,4 +1,4 @@
-package tests;
+package tests.courier;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
@@ -8,7 +8,7 @@ import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.Before;
-import steps.CourierSteps;
+import steps.courier.CourierSteps;
 import ru.practicum_services.qa_scooter.model.Courier;
 import ru.practicum_services.qa_scooter.responses.courier.CourierResponse;
 import static constants.ResponseConstants.*;
@@ -61,14 +61,12 @@ public class CourierLoginTest {
         CourierResponse expectedResponse = new CourierResponse(NOT_FOUND_CODE, notFoundErrorMessage);
         Response response = CourierSteps.loginWithLoginAndPwd (loginEndpoint, invalidCourier.getPassword(), validCourier.getLogin());
         CourierSteps.verifyResponseData(response, NOT_FOUND_CODE, NOT_FOUND_STATUS, expectedResponse);
-        //CourierSteps.printResponseData(response);
     }
     @Step ("Проверить авторизацию с некорректным логином")
     public void testLoginWithInvalidLogin(){
         CourierResponse expectedResponse = new CourierResponse(NOT_FOUND_CODE, notFoundErrorMessage);
         Response response = CourierSteps.loginWithLoginAndPwd (loginEndpoint, validCourier.getPassword(), invalidCourier.getLogin());
         CourierSteps.verifyResponseData(response, NOT_FOUND_CODE, NOT_FOUND_STATUS, expectedResponse);
-        //CourierSteps.printResponseData(response);
     }
     @Test
     @DisplayName("Проверить логин несущестующего пользователя")

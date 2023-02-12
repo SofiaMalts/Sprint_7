@@ -1,4 +1,4 @@
-package steps;
+package steps.courier;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
@@ -83,13 +83,10 @@ public class CourierSteps {
        int id = getCourierId(response);
        MatcherAssert.assertThat(id, notNullValue());
     }
-    @Step("Удалить курьера")
-    public static Response deleteCourier(String uri, int id){
-    return BaseMethods.deleteRequest(uri, id);
-    }
+
     @Step("Удалить созданного для теста курьера")
     public static void clearCourierData(String courierEndpoint, String loginEndpoint, Object body) {
-        Response response = BaseMethods.postRequest(loginEndpoint, body);;
+        Response response = BaseMethods.postRequest(loginEndpoint, body);
         if (response.statusCode() == OK_CODE) {
             int id = CourierSteps.getCourierId(response);
             BaseMethods.deleteRequest(courierEndpoint, id);
@@ -120,12 +117,5 @@ public class CourierSteps {
         checkResponseStatus(response, expectedStatus);
     }
 
-    public static void printResponseData(Response response) {
-        System.out.println(response.statusCode());
-        System.out.println(response.statusLine());
-        CourierResponse responseAsObject = responseToObject(response);
-        System.out.println(responseAsObject.getCode());
-        System.out.println(responseAsObject.getMessage());
-    }
 
 }
