@@ -1,0 +1,12 @@
+ru\practicum_services\qa_scooter\responses\courier\CourierResponse.class
+constants\Url.class
+ru\practicum_services\qa_scooter\model\Courier.class
+ru\practicum_services\qa_scooter\responses\order\Orders.class
+ru\practicum_services\qa_scooter\responses\order\Color.class
+ru\practicum_services\qa_scooter\base\BaseMethods.class
+steps\order\OrderListTestSteps.class
+ru\practicum_services\qa_scooter\model\Order.class
+steps\order\CreateOrderTestSteps.class
+ru\practicum_services\qa_scooter\responses\order\Order.class
+constants\ResponseConstants.class
+steps\courier\CourierSteps.class
