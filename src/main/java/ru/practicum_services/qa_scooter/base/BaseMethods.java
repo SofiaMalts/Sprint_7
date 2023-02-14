@@ -1,4 +1,5 @@
 package ru.practicum_services.qa_scooter.base;
+
 import io.restassured.config.RedirectConfig;
 import io.restassured.config.RestAssuredConfig;
 import io.restassured.config.SSLConfig;
@@ -11,31 +12,26 @@ public class BaseMethods {
             .sslConfig(new SSLConfig().relaxedHTTPSValidation())
             .redirect(new RedirectConfig().followRedirects(true));
 
-    public static Response getRequest(String uri){
+    public static Response getRequest(String uri) {
         return given()
                 .config(config)
                 .header("Content-type", "application/json")
                 .get(uri);
     }
-    public static Response postRequest(String uri, Object body){
+
+    public static Response postRequest(String uri, Object body) {
         return given()
                 .config(config)
                 .header("Content-type", "application/json")
                 .body(body)
                 .post(uri);
     }
-    public static Response postRequestWithJson(String uri, String json){
+
+    public static Response deleteRequest(String uri, int id) {
         return given()
                 .config(config)
                 .header("Content-type", "application/json")
-                .body(json)
-                .post(uri);
-    }
-    public static Response deleteRequest(String uri, int id){
-        return given()
-                .config(config)
-                .header("Content-type", "application/json")
-                .delete(uri+"/"+id);
+                .delete(uri + "/" + id);
     }
 
 }

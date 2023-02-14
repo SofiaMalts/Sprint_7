@@ -14,18 +14,16 @@ public class CourierResponse {
         this.code = code;
         this.message = message;
     }
-    public CourierResponse(int id) {
-        this.id = id;
-    }
-    public CourierResponse(String message) {
-        this.message = message;
-    }
+
     public CourierResponse() {
     }
 
-
     public boolean isOk() {
         return ok;
+    }
+
+    public void setOk(boolean ok) {
+        this.ok = ok;
     }
 
     public int getId() {
@@ -40,16 +38,12 @@ public class CourierResponse {
         return code;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setOk(boolean ok) {
-        this.ok = ok;
-    }
-
     public void setCode(int code) {
         this.code = code;
+    }
+
+    public String getMessage() {
+        return message;
     }
 
     public void setMessage(String message) {
